@@ -87,3 +87,5 @@ const vitorias = 85;
 const derrotas = 10;
 
 console.log(calcularRankeadas(vitorias, derrotas));
+
+O Herói tem de saldo de 75 está no nível de Diamante

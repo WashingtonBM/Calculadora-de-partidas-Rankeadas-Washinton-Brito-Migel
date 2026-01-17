@@ -1,0 +1,86 @@
+# ⚔️ Calculadora de Partidas Rankeadas
+
+Este projeto foi desenvolvido em **JavaScript** como parte de um desafio prático para consolidar conceitos fundamentais da linguagem.  
+O objetivo é calcular o saldo de vitórias de um jogador e determinar seu nível em partidas ranqueadas, seguindo regras pré-definidas.
+
+---
+
+## 📌 Objetivo do Projeto
+
+Criar uma função que:
+- Receba como parâmetros a quantidade de **vitórias** e **derrotas** de um jogador.
+- Calcule o **saldo de vitórias** através da fórmula:
+
+
+
+\[
+saldo = vitórias - derrotas
+\]
+
+
+
+- Classifique o jogador em um nível específico de acordo com a quantidade de vitórias.
+
+---
+
+## 🛠️ Tecnologias e Conceitos Utilizados
+
+Durante a execução do projeto, foram aplicados os seguintes conceitos de **JavaScript**:
+
+- **Variáveis** → para armazenar vitórias, derrotas e saldo.  
+- **Operadores matemáticos** → para calcular o saldo de vitórias.  
+- **Estruturas de decisão (if/else)** → para determinar o nível do jogador.  
+- **Funções** → para organizar o código e facilitar a reutilização.  
+- **Console.log** → para exibir o resultado final no console.
+
+---
+
+## 📊 Regras de Classificação
+
+A classificação do jogador é baseada na quantidade de vitórias:
+
+- Menor que 10 → 🪨 **Ferro**  
+- Entre 11 e 20 → 🥉 **Bronze**  
+- Entre 21 e 50 → 🥈 **Prata**  
+- Entre 51 e 80 → 🥇 **Ouro**  
+- Entre 81 e 90 → 💎 **Diamante**  
+- Entre 91 e 100 → 🔥 **Lendário**  
+- Maior ou igual a 101 → 👑 **Imortal**
+
+---
+
+## 💻 Código Implementado
+
+```javascript
+// Função que calcula o saldo e nível do jogador
+function calcularRankeadas(vitorias, derrotas) {
+    const saldoVitorias = vitorias - derrotas;
+    let nivel;
+
+    if (vitorias < 10) {
+        nivel = "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        nivel = "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        nivel = "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        nivel = "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        nivel = "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+        nivel = "Lendário";
+    } else if (vitorias >= 101) {
+        nivel = "Imortal";
+    }
+
+    return `O Herói tem de saldo de ${saldoVitorias} está no nível de ${nivel}`;
+}
+
+// Exemplo de uso
+const vitorias = 85;
+const derrotas = 10;
+
+console.log(calcularRankeadas(vitorias, derrotas));
+
+O Herói tem de saldo de 75 está no nível de Diamante
+
